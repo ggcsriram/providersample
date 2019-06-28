@@ -48,6 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final appState=Provider.of<Change>(context);
    
     return Scaffold(
       appBar: AppBar(
@@ -64,14 +65,14 @@ class _MyHomePageState extends State<MyHomePage> {
               'You have pushed the button this many times:',
             ),
             Text(
-              '$_counter',
+              appState.getI,
               style: Theme.of(context).textTheme.display1,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: ()=>appState.incrementI(),
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), 
